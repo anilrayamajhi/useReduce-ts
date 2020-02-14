@@ -3,4 +3,4 @@
 
 > `yarn && yarn start`
 
-> simple app to showcase the use of `useReduce` Hook
+> simple app to showcase `useReduce` Hook
