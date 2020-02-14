@@ -1,5 +1,3 @@
-## React | TypeScript | TSX
-
 <small>02/14/2020</small>
 <br /><br />
 
