@@ -1,4 +1,4 @@
-<small>02/14/2020</small>
+`02/14/2020`
 <br /><br />
 
 > `yarn && yarn start`
