@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useReducer } from "react";
+import "./App.css";
 
-function App() {
+interface IAction {
+  type: string;
+  payload: any;
+}
+
+function App(): JSX.Element {
+  const initialValue: number = 0,
+    reducer = (state: number, action: IAction): number => {
+      switch (action.type) {
+        case "ADD":
+          return state + 1;
+        case "SUB":
+          return state - 1;
+        case "RES":
+          return (state = 0);
+        default:
+          return state;
+      }
+    };
+  const [state, dispatch] = useReducer(reducer, initialValue);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Counter</h1>
+      <div>{state}</div>
+      <div>
+        <button onClick={() => dispatch({ type: "ADD", payload: 0 })}>+</button>
+        <button onClick={() => dispatch({ type: "SUB", payload: 0 })}>-</button>
+        <button onClick={() => dispatch({ type: "RES", payload: 0 })}>x</button>
+      </div>
     </div>
   );
 }
